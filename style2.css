@@ -1,0 +1,259 @@
+* {
+    margin: 0; /*Außenabstand*/
+    padding: 0; /*Innenabstand*/
+}
+
+html, body {
+    height: 100%; /*Höhe*/
+    background-color: #FAFAFA; /*Hintergrundfarbe*/
+}
+
+#Gesamt {
+    min-height: 100%; /*Mindesthöhe 100%*/
+    position: relative;
+}
+
+/*Kopf*/
+#Kopf {
+    width: 100%;    /*Breite*/
+    height: 50px;   /*Höhe*/
+    text-align: center; /*Textausrichtung: zentriert*/
+    background-color: silver; /*Hintergrundfarbe*/
+    padding-top: 12px; /*Innenabstand oben*/
+}
+
+/*Navigationsleiste*/
+nav {
+    height: 80px; /*Höhe*/
+    width: 100%; /*Breite*/
+    background-color: #808080; /*Hintergundfarbe der Navigationsleiste*/
+
+
+    display: flex; /*Flexbox*/
+    justify-content: space-between;
+    /*1. Flex-Item ist ganz am Anfang der Achse positioniert,
+      letztes Flex-Item ganz am Ende und alle anderen werden gleichmäßig verteilt.
+      Es entstehen also gleichmäßige Abstände zwischen den Items.*/
+
+    align-items: center; /*Positioniert die Elemente mittig auf der Kreuzachse.*/
+}
+
+nav ul {
+    height: 100%; /*Höhe*/
+    display: flex; /*Flexbox*/
+    flex-direction: row; /*Hauptachse verläuft von links nach rechts*/
+    justify-content: flex-end; /*Flex-Items werden am Ende der Hauptachse positioniert.*/
+    align-items: center; /*Positioniert die Elemente mittig auf der Kreuzachse.*/
+    list-style: none; /*Keine Listenpunkte*/
+}
+
+nav li {
+    height: 100%; /*Höhe*/
+    width: 150px; /*Breite*/
+    text-align: center; /*Textausrichtung: zentriert*/
+    position: relative;
+    color: white; /*Schriftfarbe*/
+}
+
+nav li:hover {
+    background-color: #FAFAFA; /*Hintergrundfarbe*/
+    color: black; /*Schriftfarbe*/
+}
+
+
+nav ul a {
+    height: 100%; /*Höhe*/
+    width: 100%; /*Breite*/
+
+    display: flex; /*Flexbox*/
+    align-items: center; /*Positioniert die Elemente mittig auf der Kreuzachse*/
+    justify-content: center; /*Flex-Items werden in der Mitte der Hauptachse positioniert.*/
+
+    color: white; /*Schriftfarbe*/
+    text-decoration: none; /*Keine Unterstreichungen*/
+}
+
+nav ul a:hover {
+    color: black;
+}
+
+.DropDown {
+    height: min-content; /*Höhe entspricht mindestens dem Inhalt*/
+    width: 280px;   /*Breite*/
+    background-color: #dcdcdc; /*Hintergrundfarbe*/
+
+    display: none; /*DropDown-Menü ist standardmäßig nicht sichtbar.*/
+
+    flex-direction: column; /*Hauptachse verläuft von oben nach unten & die Kreuzachse von links nach rechts.*/
+    /*Links im DropDown werden untereinander angezeigt.*/
+
+    position: absolute;
+    left: 0; /*Abstand links*/
+    top: 80px; /*DropDown wird 80px nach unten verschoben.*/
+}
+
+.DropDown li {
+    height: 70px;   /*Höhe*/
+    width: 100%;    /*Breite*/
+}
+
+.DropDown li a {
+    color: black; /*Schriftfarbe*/
+    justify-content: flex-start; /*Flex-Items werden am Anfang der Hauptachse positioniert.*/
+    padding-left: 10px; /*Innenabstand links*/
+    width: calc(100% - 30px);
+    /*Damit der Hovereffekt auch wirklich erst beim Berühren mit dem Mauszeiger aktiviert.*/
+}
+
+nav li:hover .DropDown {
+    display: flex; /*Flexbox*/
+}
+
+nav input[type="checkbox"] {
+    display: none; /*Element ist nicht sichtbar*/
+}
+
+.expandable_li {
+    display: flex; /*Flexbox*/
+    justify-content: center; /*Flex-Items werden in der Mitte der Hauptachse positioniert.*/
+    align-items: center; /*Positioniert die Elemente mittig auf der Kreuzachse*/
+}
+
+.toggle_button {
+    width: 30px;    /*Breite*/
+    height: 23px; /*Höhe*/
+    position: absolute;
+    top: 19px; /*Abstand oben*/
+    right: 25px; /*Abstand rechts*/
+    display: none; /*Ist standardmäßig nicht sichtbar.*/
+    flex-direction: column; /*Hauptachse verläuft von oben nach unten & die Kreuzachse von links nach rechts.*/
+
+    justify-content: space-between;
+    /*1. Flex-Item ist ganz am Anfang der Achse positioniert,
+      letztes Flex-Item ganz am Ende und alle anderen werden gleichmäßig verteilt.
+      Es entstehen also gleichmäßige Abstände zwischen den Items.*/
+}
+
+.bar {
+    height: 4px;    /*Höhe*/
+    width: 100%;    /*Breite*/
+    background-color: black; /*Hintergrundfarbe*/
+    border-radius: 100px; 
+}
+
+@media(max-width: 850px) {
+    .toggle_button {
+        display: flex; /*Flexbox*/
+    }
+
+    nav {
+        height: 0; /*Höhe*/
+    }
+
+    nav ul {
+        height: min-content; /*Höhe entspricht mindestens dem Inhalt*/
+        width: 100%; /*Breite*/
+        background-color: silver; /*Hintergrundfarbe*/
+        display: none; /*Ist standardmäßig nicht sichtbar.*/
+        position: absolute;
+        top: 50px; /*Abstand oben*/
+    }
+
+    nav li {
+        height: min-content; /*Höhe entspricht mindestens dem Inhalt*/
+        width: 100%;    /*Breite*/
+    }
+
+    nav ul a {
+        padding: 30px 0; /*Innenabstand*/
+    }
+
+    .expandable_li {
+        display: block;
+    }
+
+    .expandable_li label {
+        padding: 30px 0; /*Innenabstand*/
+        cursor: pointer;
+        display: block;
+    }
+
+    /*DropDown-menü nicht mehr per hover sichtbar.*/
+    .expandable_li:hover .DropDown {
+        display: none; /*Element ist nicht sichtbar*/
+    }
+
+    /*DropDown-Menü öffnet sich per Mausklick auf Externe Links.*/
+    .expandable_li input[type="checkbox"]:checked~.DropDown {
+        display: block;
+    }
+
+    /*Das DropDown-Menü soll richtig angezeigt werden.*/
+    .DropDown {
+        position: static;
+        width: 100%;    /*Breite*/
+    }
+
+    .DropDown li {
+        padding: 0; /*Innenabstand*/
+        display: block;
+        position: static;
+        background-color: #dcdcdc; /*Hintergrundfarbe*/
+    }
+
+    .DropDown li a {
+        width: 100%;    /*Breite*/
+        padding: 0;     /*Innenabstand*/
+        justify-content: center; /*Flex-Items werden in der Mitte der Hauptachse positioniert.*/
+    }
+
+    /*Menü soll erst durch einen Klick auf den toggle_button erscheinen.*/
+    #toggle_button:checked~ul {
+        display: block;
+    }
+}
+
+/*Fusszeile*/
+    #Fusszeile {
+        height: 30px; /*Höhe*/
+        width: 100%;  /*Breite*/
+        background-color: silver; /*Hintergundfarbe der Fusszeile*/
+
+        clear: both;
+        position: absolute;
+        bottom: 0; /*Fusszeile soll am Ende der Seite sein.*/
+    }
+
+    #Fusszeile ul {
+        height: 100%; /*Höhe*/
+        display: flex; /*Flexbox*/
+        flex-direction: row; /*Hauptachse verläuft von links nach rechts*/
+        justify-content: flex-start; /*Flex-Items werden am Anfang der Hauptachse positioniert.*/
+        align-items: center; /*Positioniert die Elemente mittig auf der Kreuzachse*/
+        list-style: none; /*Keine Listenpunkte*/
+    }
+
+    #Fusszeile li {
+        width: 150px;   /*Breite*/
+        text-align: center; /*Textausrichtung: zentriert*/
+    }
+
+    #Fusszeile a:link {
+        text-decoration: none; /*Keine Textunterstreichungen*/
+        color: black; /*Schriftfarbe: schwarz*/
+    }
+
+    #Fusszeile a:hover {
+        color: #FAFAFA; /*Schriftfarbe*/
+        font-weight: bold; /*Schrift: fett*/
+    }
+
+    @media print {
+        nav {
+            display: none;
+        }
+        
+        #Fusszeile {
+            display: none;
+        }
+    }

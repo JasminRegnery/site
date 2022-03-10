@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rheinland/Westland</title>
+
+    <link rel="stylesheet" type="text/css" href="style2.css"/>
+    <style>
+    /*Inhalt*/
+        .Container {
+            display: flex; /*Flexbox*/
+            flex-direction: row; /*Hauptachse verläuft von links nach rechts*/
+            flex-wrap: wrap; /*Flexiblen Elemente sollen umgebrochen werden.*/
+
+            max-width: 100%; /*Maximale Breite*/
+            height: min-content; /*Höhe entspricht mindestens dem Inhalt.*/
+            padding: 30px; /*Innenabstand*/
+        }
+
+        .Container img {
+            max-width: 575px; /*Maximale Bildbreite*/
+            min-width: 400px; /*Mindest Breite des Bildes*/
+            height: auto;     /*Höhe wird automatisch angepasst*/
+            float: left;      /*Linksbündig*/
+            margin-right: 20px; /*Rechter Außenabstand*/
+        }
+
+        .Container_Inhalt {
+            float: left;        /*Linksbündig*/
+            padding-top: 20px;  /*Oberer Innenabstand*/
+            padding-bottom: 5px; /*Unterer Innenabstand*/
+            padding-left: 5px;  /*Innenabstand nach links*/
+            padding-right: 5px; /*Innenabstand nach rechts*/
+            max-width: 60%;     /*Maximale Breite*/
+            min-width: 444px;   /*Mindest Breite*/
+            text-align: justify; /*Textausrichtung: Blocksatz*/
+            background-color: aqua; /*Hintergrundfarbe*/
+        }
+
+
+        @media(max-width: 850px) {
+            .Container {
+                padding: 15px;
+            }
+            .Container img {
+                margin-right: 0; /*Rechter Außenabstand auf 0 gesetzt*/
+            }
+
+            .Container_Inhalt {
+                margin-top: 20px; /*Oberer Außenabstand*/
+            }
+        }
+
+        @media print {
+            .Container {
+                justify-content: center;
+                break-after: page;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Gesamt">
+
+        <div id="Kopf">
+            <h1>Rheinland/Westfalen</h1>
+        </div>
+
+        <nav>
+            <input type="checkbox" id="toggle_button">
+            <label for="toggle_button" class="toggle_button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+
+            <ul>
+                <li><a href="Kontakt2.html">Kontakt</a></li>
+                <li><a href="Terminkarte  2022.pdf">Terminübersicht</a></li>
+
+                <li class="expandable_li">
+                    <input type="checkbox" id="Links_checkbox">
+                    <label for="Links_checkbox">Externe Links</label>
+                    <ul class="DropDown">
+                        <li><a href="https://www.studifieber.de/">Studiefieber</a></li>
+                        <li><a href="https://www.selk-goodcon.de/">Good Connection</a></li>
+                        <li><a href="https://www.jufe.org/">Jugendfestival</a></li>
+                        <li><a href="https://selk.de/">Homepage der SELK</a></li>
+                        <li><a href="https://freizeitfieber.de/">Freizeitfieber - Jugendreisen</a></li>
+                        <li><a href="https://www.facebook.com/SELKjugend/">SELK-Jugend auf Facebook</a></li>
+                        <li><a href="https://www.ec.de/arbeitsbereiche/freiwilligendienste/">FSJ in der SELK</a></li>
+                        <li><a href="https://lthh.de/">Lutherische Theologische Hochschule</a></li>
+                        <li><a href="https://www.jugendkongress.org/">Luth. Kongress für Jugendarbeit</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="Container">
+            <img src="Bilder/IMG-20211004-WA0001.jpg">
+            <div class="Container_Inhalt">
+                <h2>JugendMitarbeiterGremium</h2>
+                <br>
+                <p>Wir sind das JugendMitarbeiterGremium im Westen, eine Zusammensetzung von Jugendlichen
+                    aus den Gemeinden des Kirchenbezirks Rheinland/Westfalen von der Selbstständig
+                    Evangelischen Lutherischen Kirche (SELK). Wir planen und organisieren die Jugendarbeit
+                    in unserem Kirchenbezirk. <br><br>
+                    Beim JugendMitarbeiterGremium wird alles, was mit der Jugendarbeit in unserem Bezirk zu
+                    tun hat besprochen, verändert und neu begonnen. In regelmäßigen Abständen veranstalten
+                    wir Eintagesveranstaltungen, Bezirksjugendtage (BJT) sowie die jährliche
+                    Bezirkskonfirmatenfreizeit. <br><br>
+                    Die Herbstsitzung des JugendMitarbeiterGremiums dient zur Mitarbeitendenpflege, dem
+                    Jahresrückblick und der Jahresplanung für das kommende Jahr. Bei der Sitzung im Frühling
+                    planen wir die Veranstaltungen im laufenden Jahr detaillierter. <br><br>
+                    Unterstützt werden wir dabei von unserem Bezirksjugendpastor Flo Reinicke aus der Gemeinde
+                    Radevormwald und unseren beiden Jugendkoordinatoren Lydia und Luki.
+                    Die Jugendlichen im Kirchenbezirk Rheinland/Westfalen werden von den beiden
+                    Bezirksjugendvertreterinnen Therese Bolduan und Jasmin Regnery vertreten. <br><br>
+                </p>
+
+            </div>
+        </div>
+
+        <div class="Container">
+            <img src="Bilder/IMG-20210826-WA0012.jpg">
+            <div class="Container_Inhalt">
+                <h2>ProTeens</h2>
+                <br>
+                <p>ProTeens wird vom Jugendwerk der SELK in Rheinland/Westfalen veranstaltet und schult
+                    Jugendliche im Umgang mit Nervosität und Lampenfieber. Sie erlernen die Grundlagen
+                    der Gruppenphasen und erhalten einen Einblick in Spielpädagogik. Dies beinhaltet den
+                    Einsatz der verschiedenen Spiele sowie Hinweise zu Zweck und Durchführung. Darüber
+                    hinaus lernen die Jugendlichen wie man Andachten plant und durchführt. <br><br>
+                    Jugendliche aus dem JugendMitarbeiterGremium kümmern sich zusammen mit dem
+                    Bezirksjugendpastor und den Jugendkoordinatoren um die Inhalte der Seminareinheiten
+                    und sorgen für das leibliche Wohl der Jugendlichen.
+                </p>
+            </div>
+        </div>
+
+        <div class="Container">
+            <img src="Bilder/Jufe 2.JPG">
+            <div class="Container_Inhalt">
+                <h2>Bezirksjugendtage (BJT)</h2>
+                <br>Die Bezirksjugendtage, kurz BJT ist eine Wochenendveranstaltung des Kirchenbezirks
+                    und findet zwei Mal jährlich zu einem zuvor gewählten biblischen Thema statt. 
+                    Zum Ablauf gehören eine vielzahl von Workshops, Gesprächsangeboten, Andachten und
+                    einem gemeinsamen Gottesdienst zum Abschluss. In verschiedenen Workshops werden
+                    Impulse zum jeweiligen Thema gesetzt und sich gemeinsam darüber ausgetauscht.
+                    Neben den Programmpunkten gibt es aber auch viel Zeit für Gespräche, Musik und
+                    Spielerunden. <br><br> Die Bezirksjugendtage bieten dir die Möglichkeit, andere
+                    Jugendliche wiederzusehen oder kennenzulernen und neue Freundschaften zu schließen.
+                <p>
+
+                </p>
+            </div>
+        </div>
+
+        <div class="Container">
+            <img src="Bilder/IMG20211002183040.jpg">
+            <div class="Container_Inhalt">
+                <h2>Jugendkreis</h2>
+                <br>
+                <p>Zur Freude aller Beteiligten gibt es in einigen Gemeinden jeweils einen Jugendkreis. Darunter
+                    Bochum, Düsseldorf, Radevormwald und Witten. <br><br>
+                    Die Jugendkreise werden meist von Jugendlichen, oft auch im Team geleitet und geplant. <br><br>
+                    Der Jugendkreis Düsseldorf trifft sich 1-2 Mal im Monat in den Gemeinderäumen der Düsseldorfer
+                    Gemeinde. Ein Team von Jugendmitarbeiter*innen gestaltet Abende mit toller Gemeinschaft,
+                    interessanten Gesprächen, leckerem Essen und anregenden Bibelarbeiten. <br><br>
+                    Bei Interesse an dem Jugendkreis in Düsseldorf, melde dich gerne bei Therese Bolduan oder
+                    Jasmin Regnery. <br> Die E-Mail-Adressen der Beiden findest du im Menü, unter dem Punkt Kontakt.
+                    <br><br> Wir freuen uns auf dich.
+                </p>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div id="Fusszeile">
+            <ul>
+                <li><a href="#">Impressum</a></li>
+                <li><a href="#">Datenschutzerklärung</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt2</title>
+
+    <link rel="stylesheet" type="text/css" href="style2.css"/>
+
+    <style>
+        .Inhalt {
+            display: flex; /*Flexbox*/
+            flex-wrap: wrap; /*Flexiblen Elemente sollen umgebrochen werden.*/
+            flex-direction: row; /*Hauptachse verläuft von links nach rechts*/
+            justify-content: space-evenly;
+            align-items: center; /*Positioniert die Elemente mittig auf der Kreuzachse*/
+
+            max-width: 100%; /*Maximale Breite 100%*/
+            height: min-content; /*Mindestens so hoch wie der Inhalt des Containers.*/
+            padding: 15px; /*Innenabstand*/
+        }
+
+        .Polaroid {
+            float: left; /*Links positioniert*/
+            padding: 10px; /*Innenabstand*/
+            margin: 15px; /*Außenabstand*/
+            width: min-content; /* Mindestens so breit wie der Inhalt des Containers.*/
+            height: min-content; /*Mindestens so hoch wie der Inhalt des Containers.*/
+
+            background-color: brown; /*Hintergrundfarbe*/
+        }
+
+        .Polaroid img {
+            width: 250px; /*Breite*/
+            height: auto; /*Höhe*/
+        }
+
+        .Polaroid_Kontaktdaten {
+            text-align: center; /*Textausrichtung: zentriert*/
+        }
+
+        @media print {
+            .Polaroid {
+                size: portrait;
+                break-inside: avoid;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="Gesamt">
+
+        <div id="Kopf">
+            <h1>Rheinland/Westfalen</h1>
+        </div>
+
+        <nav>
+            <input type="checkbox" id="toggle_button">
+            <label for="toggle_button" class="toggle_button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+
+            <ul>
+                <li><a href="Untitled-6.html">Über uns</a></li>
+                <li><a href="Kontakt2.html">Kontakt</a></li>
+                <li><a href="Terminkarte  2022.pdf">Terminübersicht</a></li>
+
+                <li class="expandable_li">
+                    <input type="checkbox" id="Links_checkbox">
+                    <label for="Links_checkbox">Externe Links</label>
+                    <ul class="DropDown">
+                        <li><a href="https://www.studifieber.de/">Studiefieber</a></li>
+                        <li><a href="https://www.selk-goodcon.de/">Good Connection</a></li>
+                        <li><a href="https://www.jufe.org/">Jugendfestival</a></li>
+                        <li><a href="https://selk.de/">Homepage der SELK</a></li>
+                        <li><a href="https://freizeitfieber.de/">Freizeitfieber - Jugendreisen</a></li>
+                        <li><a href="https://www.facebook.com/SELKjugend/">SELK-Jugend auf Facebook</a></li>
+                        <li><a href="https://www.ec.de/arbeitsbereiche/freiwilligendienste/">FSJ in der SELK</a></li>
+                        <li><a href="https://lthh.de/">Lutherische Theologische Hochschule</a></li>
+                        <li><a href="https://www.jugendkongress.org/">Luth. Kongress für Jugendarbeit</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="Inhalt">
+            <div class="Polaroid">
+                <img src="Bilder/5913-Reinecke-Florian_700.jpg">
+                <div class="Polaroid_Kontaktdaten">
+                    <h3>Flo Reinecke</h3>
+                    <p>
+                        Bezirksjugendpastor <br>
+                        E-Mail: reinecke@selk.de
+                    </p>
+                </div>
+            </div>
+
+            <div class="Polaroid">
+                <img src="Bilder/Therese2.jpg">
+                <div class="Polaroid_Kontaktdaten">
+                    <h3>Therese Bolduan</h3>
+                    <p>
+                        Bezirksjugendvertretung <br>
+                        E-Mail: therese.bolduan@gmx.de
+                    </p>
+                </div>
+            </div>
+
+            <div class="Polaroid">
+                <img src="Bilder/Jasmin.jpg">
+                <div class="Polaroid_Kontaktdaten">
+                    <h3>Jasmin Regnery</h3>
+                    <p>
+                        Bezirksjugendvertretung <br>
+                        E-Mail: jasmin.regnery@web.de
+                    </p>
+                </div>
+            </div>
+
+            <div class="Polaroid">
+                <img src="Bilder/Luki, Lydi.PNG">
+                <div class="Polaroid_Kontaktdaten">
+                    <h3>Lydia Pfitzinger <br> & Lukas Schorling</h3>
+                    <p>
+                        Bezirksjugendkoordinatoren <br>
+                        E-Mail: <br>
+                        l.pfitzinger@gmx.de <br>
+                        l.schorling@gmx.net
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+    <div id="Fusszeile">
+        <ul>
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Datenschutzerklärung</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
